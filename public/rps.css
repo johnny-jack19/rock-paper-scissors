@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Fira Sans', Sans-Serif;
 }
 
 body {
@@ -8,27 +9,9 @@ body {
     color: white;
 }
 
-h1 {
-    color: rgb(6, 214, 160);
-    text-align: center;
-    font-size: 4em;
-    text-shadow: 2px 2px 5px black;
-    margin-bottom: 1em;
-}
-
-p {
-    font-size: xx-large;
-}
-
-.pick {
+#game {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
-
-.pick button {
-    margin-top: 1em;
 }
 
 .game-button {
@@ -40,20 +23,34 @@ p {
     font-size: x-large;
 }
 
-.Rock {
-    background-color: rgb(239, 71, 111);
-    grid-area: rock;
-}
+h1 {
+    font-family: 'Cormorant Garamond', Serif;
+    color: rgb(6, 214, 160);
+    text-align: center;
+    font-size: 5em;
+    text-shadow: 2px 2px 5px black;
+    margin-bottom: 1em;
+}    
+
+p {
+    font-size: xx-large;
+}    
 
 .Paper {
     background-color: rgb(17, 138, 178);
     grid-area: paper;
 }
 
-.Scissors {
-    background-color: rgb(255, 209, 102);
-    grid-area: scissors;
-}
+.pick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}        
+
+.pick button {
+    margin: 1em;
+}        
 
 #player-pick {
     display: grid;
@@ -61,10 +58,22 @@ p {
         "... rock ..."
         "paper ... scissors";
     width: 95%;
-    height: 40vh;
+    height: 50vh;
     margin: auto;
     align-items: center;
     justify-items: center;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.restart {
+    background-color: rgb(18, 173, 132);
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    align-self: center;
+    margin: .5em;
+    font-size: large;
 }
 
 .results {
@@ -74,18 +83,10 @@ p {
     margin-bottom: 2em;
 }
 
-.score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin: auto;
-    border: 1px solid white;
-}
-
-.score p {
-    margin: .5em;
-}
+.Rock {
+    background-color: rgb(239, 71, 111);
+    grid-area: rock;
+}    
 
 .row {
     width: 100%;
@@ -94,16 +95,31 @@ p {
     justify-content: space-around;
 }
 
+.Scissors {
+    background-color: rgb(255, 209, 102);
+    grid-area: scissors;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    border: 1px solid white;
+    max-width: 500px;
+}
+
+.score p {
+    margin: .5em;
+}
+
 .winner {
     box-shadow:
         0 0 2px 10px rgba(255,255, 255, .3),
         0 0 2px 25px rgba(255,255, 255, .2),
         0 0 2px 45px rgba(255,255, 255, .1);
         animation: pulse 1.5s infinite;
-}
-
-.pick button {
-    margin: 1em;
 }
 
 @keyframes pulse {
@@ -125,20 +141,18 @@ p {
             0 0 2px 25px rgba(255,255, 255, .2),
             0 0 2px 45px rgba(255,255, 255, .1)
     }
-  }
-
-.restart {
-    background-color: rgb(18, 173, 132);
-    color: white;
-    padding: 1em;
-    border-radius: 5px;
-    align-self: center;
-    margin: .5em;
-    font-size: large;
 }
 
-#game {
-    display: flex;
-    flex-direction: column;
-}
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 4em;
+    }   
 
+    p {
+        font-size: x-large;
+    } 
+
+    .restart {
+        margin: 1.5em;
+    }
+}
