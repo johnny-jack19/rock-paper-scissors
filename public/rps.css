@@ -1,158 +1,203 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Fira Sans', Sans-Serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", Sans-Serif;
 }
 
 body {
-    background-color: rgb(7, 59, 76);
-    color: white;
+  background-color: rgb(7, 59, 76);
+  color: white;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 #game {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-button {
-    border-radius: 50%;
-    color: white;
-    width: 5em;
-    height: 5em;
-    border: 3px black solid;
-    font-size: x-large;
+  border-radius: 50%;
+  color: white;
+  width: 5em;
+  height: 5em;
+  border: 3px black solid;
+  font-size: x-large;
 }
 
 h1 {
-    font-family: 'Cormorant Garamond', Serif;
-    color: rgb(6, 214, 160);
-    text-align: center;
-    font-size: 5em;
-    text-shadow: 2px 2px 5px black;
-    margin-bottom: 1em;
-}    
+  font-family: "Cormorant Garamond", Serif;
+  color: rgb(6, 214, 160);
+  text-align: center;
+  font-size: 5em;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 1em;
+}
+
+.loading {
+  display: flex;
+  justify-content: space-around;
+}
+
+@keyframes handimation {
+  0% {
+    margin-top: 0;
+  }
+  15% {
+    margin-top: 100px;
+  }
+  33% {
+    margin-top: 0;
+  }
+  48% {
+    margin-top: 100px;
+  }
+  66% {
+    margin-top: 0;
+  }
+  81% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+.hand {
+  color: white;
+  font-size: 10em;
+  animation-name: handimation;
+  animation-duration: 2.5s;
+}
+
+#left-hand {
+  transform: rotate(90deg);
+}
+
+#right-hand {
+  transform: scaleX(-1) rotate(90deg);
+}
 
 p {
-    font-size: xx-large;
-}    
+  font-size: xx-large;
+}
 
 .Paper {
-    background-color: rgb(17, 138, 178);
-    grid-area: paper;
+  background-color: rgb(17, 138, 178);
+  grid-area: paper;
 }
 
 .pick {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-}        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
 
 .pick button {
-    margin: 1em;
-}        
+  margin: 1em;
+}
 
 #player-pick {
-    display: grid;
-    grid-template-areas: 
-        "... rock ..."
-        "paper ... scissors";
-    width: 95%;
-    height: 50vh;
-    margin: auto;
-    align-items: center;
-    justify-items: center;
-    max-width: 500px;
-    max-height: 500px;
+  display: grid;
+  grid-template-areas:
+    "... rock ..."
+    "paper ... scissors";
+  width: 95%;
+  height: 50vh;
+  margin: auto;
+  align-items: center;
+  justify-items: center;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .restart {
-    background-color: rgb(18, 173, 132);
-    color: white;
-    padding: 1em;
-    border-radius: 5px;
-    align-self: center;
-    margin: .5em;
-    font-size: large;
+  background-color: rgb(18, 173, 132);
+  color: white;
+  padding: 1em;
+  border-radius: 5px;
+  align-self: center;
+  margin: 0.5em;
+  font-size: large;
+  cursor: pointer;
 }
 
 .results {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2em;
 }
 
 .Rock {
-    background-color: rgb(239, 71, 111);
-    grid-area: rock;
-}    
+  background-color: rgb(239, 71, 111);
+  grid-area: rock;
+}
 
 .row {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .Scissors {
-    background-color: rgb(255, 209, 102);
-    grid-area: scissors;
+  background-color: rgb(255, 209, 102);
+  grid-area: scissors;
 }
 
 .score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85%;
-    margin: auto;
-    border: 1px solid white;
-    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  border: 1px solid white;
+  max-width: 500px;
+  border-radius: 10px;
 }
 
 .score p {
-    margin: .5em;
+  margin: 0.5em;
 }
 
 .winner {
-    box-shadow:
-        0 0 2px 10px rgba(255,255, 255, .3),
-        0 0 2px 25px rgba(255,255, 255, .2),
-        0 0 2px 45px rgba(255,255, 255, .1);
-        animation: pulse 1.5s infinite;
+  box-shadow: 0 0 2px 10px rgba(255, 255, 255, 0.3),
+    0 0 2px 25px rgba(255, 255, 255, 0.2), 0 0 2px 45px rgba(255, 255, 255, 0.1);
+  animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow:
-            0 0 2px 10px rgba(255,255, 255, .3),
-            0 0 2px 25px rgba(255,255, 255, .2),
-            0 0 2px 45px rgba(255,255, 255, .1)
-    }
-    50% {
-        box-shadow:
-            0 0 2px 5px rgba(255,255, 255, .5),
-            0 0 2px 10px rgba(255,255, 255, .3),
-            0 0 2px 15px rgba(255,255, 255, .1)
-    }
-    100% {
-        box-shadow:
-            0 0 2px 10px rgba(255,255, 255, .3),
-            0 0 2px 25px rgba(255,255, 255, .2),
-            0 0 2px 45px rgba(255,255, 255, .1)
-    }
+  0% {
+    box-shadow: 0 0 2px 10px rgba(255, 255, 255, 0.3),
+      0 0 2px 25px rgba(255, 255, 255, 0.2),
+      0 0 2px 45px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.5),
+      0 0 2px 10px rgba(255, 255, 255, 0.3),
+      0 0 2px 15px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 2px 10px rgba(255, 255, 255, 0.3),
+      0 0 2px 25px rgba(255, 255, 255, 0.2),
+      0 0 2px 45px rgba(255, 255, 255, 0.1);
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    h1 {
-        font-size: 4em;
-    }   
+  h1 {
+    font-size: 4em;
+  }
 
-    p {
-        font-size: large;
-    } 
+  p {
+    font-size: large;
+  }
 
-    .restart {
-        margin: 1.5em;
-    }
+  .restart {
+    margin: 1.5em;
+  }
 }
